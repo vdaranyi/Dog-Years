@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dogYearInput: UITextField!
+    @IBOutlet weak var outputYears: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func convertButton(sender: UIButton) {
+        
+        outputYears.text = "\(dogYearInput.text.toInt()! * 7) human years!"
+        outputYears.hidden = false
+        dogYearInput.resignFirstResponder()
+        dogYearInput.text = ""
+        
+        
+    }
+    
+    
+    
+    
 }
 
